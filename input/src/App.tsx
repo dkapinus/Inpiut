@@ -5,11 +5,12 @@ import {FullInput} from "./Components/Full_Input";
 function App() {
 
 
-  let[message,setmessage]=useState([{message:'Yo'},{message: 'Bro'}])
+  let[message,setMessage]=useState([{message:'Yo'},{message: 'Bro'}])
 
 
     const callback = (inputValue:string)=> {
-      setmessage([{message: inputValue},...message])
+      setMessage([{message: inputValue},...message])
+
     }
 
   return (
@@ -17,7 +18,7 @@ function App() {
       <FullInput callback={callback}/>
         {message.map((el,index)=>{
             return(
-                <div>{el.message}</div>
+                <div key={index}>{el.message}</div>
             )
         })}
 

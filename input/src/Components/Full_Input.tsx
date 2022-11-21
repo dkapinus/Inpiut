@@ -10,15 +10,17 @@ type InputButton = {
 
      const onClickHandlerButton=()=> {
  props.callback(inputValue)
+         setInputValue('')
      }
 
      const onClickHandlerInput = (event:ChangeEvent<HTMLInputElement>)=> {
 setInputValue(event.currentTarget.value)
+
      }
 
     return (
         <div>
-            <input onChange={onClickHandlerInput}/>
+            <input  value={inputValue} onChange={onClickHandlerInput}/>
             <button onClick={onClickHandlerButton}>+</button>
         </div>
     );
